@@ -8,15 +8,24 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HomeComponent } from './home/home.component';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+import { EventListComponent } from './event-list/event-list.component';
+
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
-    HomeComponent
+    HomeComponent,
+    EventListComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +38,10 @@ const appRoutes: Routes = [
     MatListModule,
     MatCardModule,
     MatInputModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     RouterModule.forRoot(
       appRoutes
     )

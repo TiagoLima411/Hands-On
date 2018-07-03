@@ -31,3 +31,29 @@
   </div>
 </div>
 
+<h1>Eventos</h1>
+<div style="margin-left: 20px" *ngFor="let page of pagesObservable | async">
+    <mat-card class="evento-card">
+        <mat-card-header>
+          <mat-card-title><strong>{{page.nome}}</strong></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{page.urlImage}}" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <strong>Descrição: </strong><p style="margin-left: 15px">{{page.descricao}}</p>
+          <hr style="margin: 15px">
+          <strong>Quantidade mínima de voluntários:  </strong>{{page.voluntarios}}
+          <hr style="margin: 15px">
+          <strong>Local: </strong>
+          <p style="margin-left: 15px">UF:  {{page.local.uf}}</p>
+          <p style="margin-left: 15px">Localidade:  {{page.local.localidade}}</p>
+          <p style="margin-left: 15px">Bairro:  {{page.local.bairro}}</p>
+          <p style="margin-left: 15px">Logradouro:  {{page.local.logradouro}}</p>
+          <p style="margin-left: 15px">Complemento:  {{page.local.complemento}}</p>
+          <p style="margin-left: 15px">Nº:  {{page.local.num}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Curtir</button>
+          <button mat-button>Voluntário</button>
+        </mat-card-actions>
+      </mat-card>
+</div>

@@ -1,0 +1,45 @@
+{
+    "eventos": {
+        "evento1":{
+            "nome": "Alimento é vida",
+            "voluntarios": 100,
+            "local": {
+                "cep": "01001-000",
+                "logradouro": "Praça da Sé",
+                "complemento": "lado ímpar",
+                "bairro": "Sé",
+                "localidade": "São Paulo",
+                "uf": "SP",
+                "unidade": "",
+                "ibge": "3550308",
+                "gia": "1004",
+                "num": "SN"
+            },
+            "data": null,
+            "descricao": "Arrecadação de alimentos para famílias carentes pedimos a todos os voluntários que arrecadem ou doem pelo 5 kg de alimentos. Para que seja possível rellizar o multirão contra a fome.",
+            "urlImage": "http://www.osul.com.br/wp-content/uploads/2015/07/october-2014-pratocheio-1412690646-jpg.jpg"
+        },
+        "evento2":{
+            "nome": "Conhecimento é poder",
+            "voluntarios": 5,
+            "local": {
+                "cep": "5700-000",
+                "logradouro": "Av norma pimentel",
+                "complemento": "prédio comercial alvorada 1º andar",
+                "bairro": "Benedito Bentes I",
+                "localidade": "Maceió",
+                "uf": "AL",
+                "unidade": "",
+                "ibge": "3550308",
+                "gia": "1004",
+                "num": "1002"
+            },
+            "data": null,
+            "descricao": "Precisamos de professores voluntário para dar aulas pré-vestibular para alunos sem renda da comunidade cidade sorriso. Qualquer área será bem vinda. O professor deve estar cursando no mínimo graduação.",
+            "urlImage": "https://i1.wp.com/s3.amazonaws.com/wordpress-cdn.eadbox.com/2018/01/31163251/gest%C3%A3o-do-conhecimento1.png?fit=720%2C374&ssl=1"
+        }
+        
+            
+    }
+}
+

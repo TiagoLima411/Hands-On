@@ -18,7 +18,14 @@ p {
     margin-right: 5%;
     margin-top: 3%; 
 }
-  
+
+.evento-card {
+    max-width: 300px;
+    float: left;
+    margin-right: 5%;
+    margin-top: 3%;
+}
+
 .example-header-image {
     background-image: url('../../assets/imgs/avatar-cadastro.jpg');
     background-size: cover;
@@ -30,9 +37,9 @@ p {
     width: 100%;
   }
   
-  .example-full-width {
-    width: 100%;
-  }
+.example-full-width {
+  width: 100%;
+}
 
 #texto-home {
     padding: 20px;
@@ -43,4 +50,8 @@ p {
     margin-left: 5%;
     margin-top: 3%;
     background-color: rgba(49, 51, 36, 0.8) 
+}
+
+.eventos {
+    max-width: 500px;
 }
