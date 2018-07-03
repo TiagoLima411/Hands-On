@@ -1,0 +1,10 @@
+.example-card {
+    max-width: 250px;
+    margin: 0 auto;
+    margin-top: 3%; 
+}
+
+.example-header-image {
+    background-image: url('../../assets/imgs/avatar-cadastro.jpg');
+    background-size: cover;
+}

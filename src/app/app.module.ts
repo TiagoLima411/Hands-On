@@ -11,13 +11,16 @@ import { HomeComponent } from './home/home.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { EventListComponent } from './event-list/event-list.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { AfService } from './providers/af.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginPageComponent }
 ]
 
 @NgModule({
@@ -25,7 +28,8 @@ const appRoutes: Routes = [
     AppComponent,
     MainNavComponent,
     HomeComponent,
-    EventListComponent
+    EventListComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -41,12 +45,12 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    AngularFireAuthModule,
     RouterModule.forRoot(
       appRoutes
     )
   ],
-  providers: [],
+  providers: [AfService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
