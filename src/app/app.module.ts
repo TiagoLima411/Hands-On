@@ -10,12 +10,12 @@ import { HomeComponent } from './home/home.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { EventListComponent } from './event-list/event-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AfService } from './providers/af.service';
+import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },

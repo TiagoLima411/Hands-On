@@ -22,11 +22,16 @@
       <mat-card-actions>
         <button mat-button (click)="login()">Login com google</button>
       </mat-card-actions>
-    </mat-card>
-  </div>
+  </mat-card>
+</div>
   
-<div *ngIf="AfService.users | async as users">
+<div *ngIf="user">
   <button mat-button (click)="AfService.logout()">Logout</button>
-  <h3>Hello {{users.displayName}}</h3>
-  <img [src]="users.photoURL">
+  <h3>Hello {{user.displayName}}</h3>
+  <img [src]="user.photoURL">
+</div>
+
+<div *ngIf="user">
+  <p>Subscriber: {{ user.roles?.subscribe ? true:false}}</p>
+  <p>Admin: {{ user.roles?.admin ? true:false}}</p>
 </div>
