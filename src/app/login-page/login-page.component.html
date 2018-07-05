@@ -1,4 +1,4 @@
-<div>    
+<div *ngIf="!user">    
     <mat-card class="example-card">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
@@ -24,14 +24,8 @@
       </mat-card-actions>
   </mat-card>
 </div>
-  
-<div *ngIf="user">
-  <button mat-button (click)="AfService.logout()">Logout</button>
-  <h3>Hello {{user.displayName}}</h3>
-  <img [src]="user.photoURL">
-</div>
 
-<div *ngIf="user">
+<!-- <div *ngIf="user">
   <p>Subscriber: {{ user.roles?.subscribe ? true:false}}</p>
   <p>Admin: {{ user.roles?.admin ? true:false}}</p>
-</div>
+</div> -->

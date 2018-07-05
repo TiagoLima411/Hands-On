@@ -20,7 +20,8 @@ import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginPageComponent }
+  { path: 'login', component: LoginPageComponent },
+  { path: 'events', component: EventListComponent }
 ]
 
 @NgModule({
