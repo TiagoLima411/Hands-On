@@ -32,6 +32,7 @@
       <button *ngIf="!user" mat-button routerLink="/login">Login</button>
       <button mat-button routerLink="/">Home</button>
       <button *ngIf="user" mat-button routerLink="/events">Eventos</button>
+      <button *ngIf="user" mat-button routerLink="/admin">Admin</button>
       <button *ngIf="user" mat-button (click)="afService.logout()">Logout</button>
     </mat-toolbar>
     <ng-content></ng-content>

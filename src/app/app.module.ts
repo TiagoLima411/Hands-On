@@ -16,12 +16,16 @@ import { EventListComponent } from './event-list/event-list.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AfService } from './providers/af.service';
 import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
+import { AdminGuard } from './guards/admin.guard';
+import { SubscriberGuard } from './guards/subscriber.guard';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginPageComponent },
-  { path: 'events', component: EventListComponent }
+  { path: 'events', component: EventListComponent, canActivate: [SubscriberGuard] },
+  { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuard] }
 ]
 
 @NgModule({
@@ -30,7 +34,8 @@ const appRoutes: Routes = [
     MainNavComponent,
     HomeComponent,
     EventListComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,
@@ -45,13 +50,13 @@ const appRoutes: Routes = [
     MatInputModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFirestoreModule,
     AngularFireAuthModule,
     RouterModule.forRoot(
       appRoutes
     )
   ],
-  providers: [AfService],
+  providers: [AfService, AdminGuard, SubscriberGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
