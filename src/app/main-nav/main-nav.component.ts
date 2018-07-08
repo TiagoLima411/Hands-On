@@ -21,7 +21,9 @@ export class MainNavComponent implements OnInit {
               public afService: AfService) {}
 
   ngOnInit() {
-    this.afService.user$.subscribe(user => this.user = user);
+    this.afService.user$.subscribe(user => {
+      this.user = user;
+    });
   }
   
 }

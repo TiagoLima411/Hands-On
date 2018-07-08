@@ -4,16 +4,13 @@ export class Event {
     nome : string;
     voluntarios : Number;
     likes: Number;
-    local : Local;
-    position : string;
-    office : string;
-    salary : number;
-    data: Date;        
+    local : String;
+    data: Date;      
     descricao: String;
     urlImage: String;
 }
 
-export class Local {
+/* export class Local {
     cep: String;
     logradouro : String;
     complemento: String;
@@ -23,4 +20,4 @@ export class Local {
     unidade: String;
     ibge: String
     gia: String;
-}
+} */

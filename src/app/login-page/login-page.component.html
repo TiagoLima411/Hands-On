@@ -24,6 +24,17 @@
       </mat-card-actions>
   </mat-card>
 </div>
+<div *ngIf="user">
+  <mat-card class="example-card">
+      <img mat-card-image src="../../assets/imgs/cadastro.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+          <h3>Bem vindo a nossa plataforma {{user.displayName}} nela vc poderá criar eventos para fins sociais.</h3>
+          <p>Caso use nossa plataforma para outros fins que não seja a finalidade citada acima, sua conta será automaticamente bloqueada.</p>
+          <p><strong>Grato pelo seu ingresso!</strong></p>
+      </mat-card-content>      
+  </mat-card>
+  
+</div>
 
 <!-- <div *ngIf="user">
   <p>Subscriber: {{ user.roles?.subscribe ? true:false}}</p>

@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase} from 'angularfire2/database';
+import { EventService } from './../shared/event.service'
+
 @Component({
-  selector: 'event-list',
+  selector: 'app-event-list',
   templateUrl: './event-list.component.html',
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private eventService: EventService) { }
 
   ngOnInit() {
   }
