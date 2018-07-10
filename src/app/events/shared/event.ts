@@ -1,5 +1,6 @@
 export class Event {
     key : string;
+    userId : String;
     nome : string;
     voluntarios : Number;
     likes: Number;
