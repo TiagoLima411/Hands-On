@@ -30,11 +30,11 @@
       <div *ngIf="user">
         <mat-menu #menu="matMenu" x-position="after" y-position="below" overlapTrigger="false">
           <button mat-menu-item>
-            <mat-icon>dialpad</mat-icon>
+            <mat-icon>how_to_reg</mat-icon>
             <span>Perfil</span>
           </button>
           <button mat-menu-item (click)="afService.logout()" routerLink="/">
-            <mat-icon>notifications_off</mat-icon>
+            <mat-icon>exit_to_app</mat-icon>
             <span>Logout</span>
           </button>
         </mat-menu>
@@ -43,7 +43,7 @@
         <button mat-button routerLink="/admin">Admin</button>
         
         <button mat-button [matMenuTriggerFor]="menu">            
-          <span>Olá {{user.displayName}}         </span>
+          <span>Olá {{user.displayName}}</span>
           <img class="avatar" [src]="user.photoURL">
         </button>
       </div>

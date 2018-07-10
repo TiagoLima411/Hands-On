@@ -1,6 +1,5 @@
 export class Event {
-    user_id: String;
-    $key : string;
+    key : string;
     nome : string;
     voluntarios : Number;
     likes: Number;
@@ -8,6 +7,7 @@ export class Event {
     data: Date;      
     descricao: String;
     urlImage: String;
+    active: boolean;
 }
 
 /* export class Local {

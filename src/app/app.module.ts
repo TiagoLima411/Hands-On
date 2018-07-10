@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatSnackBarModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material/menu';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -19,9 +19,11 @@ import { AdminGuard } from './guards/admin.guard';
 import { SubscriberGuard } from './guards/subscriber.guard';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { EventsComponent } from './events/events.component';
-import { EventComponent } from './events/event/event.component';
+import { EventComponent} from './events/event/event.component';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { FormsModule} from '@angular/forms';
+import { EventDetailComponent } from './events/event-detail/event-detail.component';
+
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -41,7 +43,8 @@ const appRoutes: Routes = [
     AdminPageComponent,
     EventsComponent,
     EventComponent,
-    EventListComponent
+    EventListComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -54,16 +57,20 @@ const appRoutes: Routes = [
     MatListModule,
     MatCardModule,
     MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatMenuModule,
+    MatSnackBarModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFirestoreModule,
+    AngularFirestoreModule,    
     AngularFireAuthModule,
     FormsModule,
     RouterModule.forRoot(
       appRoutes
     )
   ],
+  entryComponents: [],
   providers: [AfService, AdminGuard, SubscriberGuard],
   bootstrap: [AppComponent]
 })

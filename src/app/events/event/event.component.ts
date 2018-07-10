@@ -1,37 +1,49 @@
-import { Component, OnInit, NgModule } from '@angular/core';
-import { EventService } from './../shared/event.service';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import {ErrorStateMatcher, ShowOnDirtyErrorStateMatcher} from '@angular/material/core';
-import { MatInputModule } from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs';
-
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
+import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+ 
+import { Event } from '../shared/event';
+import { EventService } from '..//shared/event.service';
 
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
-  styleUrls: ['./event.component.css'],
-  providers: [
-    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
-  ]
+  styleUrls: ['./event.component.css']
 })
 
 export class EventComponent implements OnInit {
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-  matcher = new MyErrorStateMatcher();
-  value = 'Clear me';
+  event: Event = new Event();
+  submitted = false;
+ 
   constructor(private eventService: EventService) { }
-
+ 
   ngOnInit() {
   }
+
+  newEvent(): void {
+    this.submitted = false;
+    this.event = new Event();
+  }
+ 
+  save() {
+    this.eventService.createEvent(this.event);
+    this.event = new Event();
+  }
+ 
+  onSubmit() {
+    this.submitted = true;
+    this.save();
+  }
 }
+
+@Component({
+  selector: 'snack-bar-component-example-snack',
+  template: `<p class="snake-bar"><strong>
+  Evento salvo com sucesso! 
+</strong></p>`,
+  styles: [`
+    .snake-bar {
+      color: #bbff00;
+    }
+  `],
+})
+export class PizzaPartyComponent {}

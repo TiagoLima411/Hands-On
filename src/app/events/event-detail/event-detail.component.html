@@ -1,0 +1,19 @@
+<div *ngIf="event">
+  <div>
+    <label>First Name: </label> {{event.nome}}
+  </div>
+  <div>
+    <label>Age: </label> {{event.descricao}}
+  </div>
+  <div>
+    <label>Active: </label> {{event.active}}
+  </div>
+ 
+  <span class="button is-small btn-primary" *ngIf='event.active' (click)='updateActive(false)'>Inactive</span>
+ 
+  <span class="button is-small btn-primary" *ngIf='!event.active' (click)='updateActive(true)'>Active</span>
+ 
+  <span class="button is-small btn-danger" (click)='deleteEvent()'>Delete</span>
+ 
+  <hr/>
+</div>

@@ -1,4 +1,5 @@
 .example-card {
+    margin-top: 2% !important;
     max-width: 400px;
     margin: 0 auto;
   }

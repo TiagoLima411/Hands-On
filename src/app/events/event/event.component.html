@@ -1,4 +1,4 @@
-<div>    
+<!-- <div [hidden]="submitted" style="width: 300px;">    
   <mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
@@ -6,32 +6,75 @@
     </mat-card-header>
       <img mat-card-image src="../../assets/imgs/cadastro.jpg" alt="Photo of a Shiba Inu">
     <mat-card-content>
-      <form class="example-form">
+
+      <form (ngSubmit)="onSubmit()">
+        <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="eventService.selectedEvent.$key">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Nome">
+          <input matInput placeholder="Nome do evento" id="nome" name="nome" [(ngModel)]="event.nome" required>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <input type="email" matInput placeholder="email">
+            <input matInput placeholder="Quantidade mínima de voluntários" id="voluntarios" name="voluntarios" [(ngModel)]="event.voluntarios" type="number" required>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <input type="password" matInput placeholder="password">
+            <input matInput placeholder="Local" id="local" name="local" [(ngModel)]="eventService.selectedEvent.local" required>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Nome">
+            <textarea matInput style="height: 50px;" placeholder="Descricao" name="descricao" #descricao="ngModel" [(ngModel)]="eventService.selectedEvent.descricao" required></textarea>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <input type="email" matInput placeholder="email">
+            <input matInput placeholder="urlImage" name="urlImage" #urlImage="ngModel" [(ngModel)]="eventService.selectedEvent.urlImage" required>
         </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input type="password" matInput placeholder="password">
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Escolha uma data" name="data" #data="ngModel" [(ngModel)]="eventService.selectedEvent.data" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input type="password" matInput placeholder="password">
-        </mat-form-field>
+
+        <div>
+          <button type="submit" class="btn btn-success">Submit</button>
+          <div [hidden]="!submitted">
+            <h4>You submitted successfully!</h4>
+            <button class="btn btn-success" (click)="newevent()">Add</button>
+          </div>
+            Reset</button>
+        </div>
+
       </form>
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>Cadastrar</button>
-    </mat-card-actions>
   </mat-card>
+</div> -->
+<h3>Create Customer</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nome">Name</label>
+      <input type="text" class="form-control" id="nome" required [(ngModel)]="event.nome" name="nome">
+    </div>
+ 
+    <div class="form-group">
+      <label for="voluntarios">Age</label>
+      <input type="text" class="form-control" id="voluntarios" required [(ngModel)]="event.voluntarios" name="voluntarios">
+    </div>
+ 
+    <div class="form-group">
+      <label for="local">Age</label>
+      <input type="text" class="form-control" id="local" required [(ngModel)]="event.local" name="local">
+    </div>
+
+    <div class="form-group">
+      <label for="descricao">Age</label>
+      <input type="text" class="form-control" id="descricao" required [(ngModel)]="event.descricao" name="descricao">
+    </div>
+
+    <div class="form-group">
+      <label for="urlImage">Age</label>
+      <input type="text" class="form-control" id="urlImage" required [(ngModel)]="event.urlImage" name="urlImage">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+ 
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newevent()">Add</button>
 </div>

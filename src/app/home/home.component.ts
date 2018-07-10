@@ -14,14 +14,12 @@ export class HomeComponent implements OnInit {
   NgModuleMatCardModule
   pagesObservable: Observable<any[]>;
 
-  teste = [
-    {nome: 'tiago'},{nome: 'leandro'}
-  ]
   constructor(private db: AngularFireDatabase) { }
 
   ngOnInit() {
-    this.pagesObservable = this.getPages('/eventos');
+    this.pagesObservable = this.getPages('/events');
   }
+  
   getPages(listPath): Observable<any[]> {
     return this.db.list(listPath).valueChanges();
   }
