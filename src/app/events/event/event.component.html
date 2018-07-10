@@ -43,7 +43,7 @@
     </mat-card-content>
   </mat-card>
 </div> -->
-<h3>Create Customer</h3>
+<h3>Create Event</h3>
 <div [hidden]="submitted" style="width: 300px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -52,22 +52,22 @@
     </div>
  
     <div class="form-group">
-      <label for="voluntarios">Age</label>
-      <input type="text" class="form-control" id="voluntarios" required [(ngModel)]="event.voluntarios" name="voluntarios">
+      <label for="voluntarios">voluntarios</label>
+      <input type="number" class="form-control" id="voluntarios" required [(ngModel)]="event.voluntarios" name="voluntarios">
     </div>
  
     <div class="form-group">
-      <label for="local">Age</label>
+      <label for="local">local</label>
       <input type="text" class="form-control" id="local" required [(ngModel)]="event.local" name="local">
     </div>
 
     <div class="form-group">
-      <label for="descricao">Age</label>
+      <label for="descricao">desc</label>
       <input type="text" class="form-control" id="descricao" required [(ngModel)]="event.descricao" name="descricao">
     </div>
 
     <div class="form-group">
-      <label for="urlImage">Age</label>
+      <label for="urlImage">urlImage</label>
       <input type="text" class="form-control" id="urlImage" required [(ngModel)]="event.urlImage" name="urlImage">
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
@@ -76,5 +76,7 @@
  
 <div [hidden]="!submitted">
   <h4>You submitted successfully!</h4>
-  <button class="btn btn-success" (click)="newevent()">Add</button>
+  <button class="btn btn-success" (click)="newEvent()">Add</button>
 </div>
+
+<event-list></event-list>

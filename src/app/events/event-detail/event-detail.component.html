@@ -3,17 +3,17 @@
     <label>First Name: </label> {{event.nome}}
   </div>
   <div>
-    <label>Age: </label> {{event.descricao}}
+    <label>Descricao: </label> {{event.descricao}}
   </div>
   <div>
     <label>Active: </label> {{event.active}}
   </div>
  
-  <span class="button is-small btn-primary" *ngIf='event.active' (click)='updateActive(false)'>Inactive</span>
+  <button class="button is-small btn-primary" *ngIf='event.active' (click)='updateActive(false)'>Inactive</button>
  
-  <span class="button is-small btn-primary" *ngIf='!event.active' (click)='updateActive(true)'>Active</span>
+  <button class="button is-small btn-primary" *ngIf='!event.active' (click)='updateActive(true)'>Active</button>
  
-  <span class="button is-small btn-danger" (click)='deleteEvent()'>Delete</span>
+  <button class="button is-small btn-danger" (click)='deleteEvent()'>Delete</button>
  
   <hr/>
 </div>

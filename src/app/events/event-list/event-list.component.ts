@@ -14,10 +14,10 @@ export class EventListComponent implements OnInit {
   constructor(private eventService: EventService) { }
  
   ngOnInit() {
-    this.getCustomersList();
+    this.getEventsList();
   }
  
-  getCustomersList() {
+  getEventsList() {
     // Use snapshotChanges().map() to store the key
     this.eventService.getEventList().snapshotChanges().pipe(
       map(changes =>
