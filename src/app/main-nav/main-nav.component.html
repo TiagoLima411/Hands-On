@@ -1,124 +1,46 @@
 <mat-sidenav-container class="sidenav-container">
-  <!-- <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport="false"
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="!(isHandset$ | async)!.matches">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
-    <mat-nav-list>      
-      <a *ngIf="!user" mat-list-item href="/login">Login</a>
-      <a mat-list-item href="/">Home</a>
-      <button *ngIf="user" mat-list-item href="/events">Eventos</button>
-      <button mat-list-item *ngIf="user" mat-button (click)="AfService.logout()">Logout</button>
-    </mat-nav-list>
-  </mat-sidenav> -->
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <!-- <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">group_work</mat-icon>
-      </button> -->
-      <div class="logo">
-        <span>Hands On</span>
-      </div>
-      <!-- <span class="spacer"></span> -->
-      <div>
-        <button mat-button routerLink="/">Home</button>
-        <button mat-button routerLink="/events">Eventos</button>
-        <button *ngIf="!user" mat-button routerLink="/login">Login</button>
-        <button *ngIf="user" [matMenuTriggerFor]="menu" overlapTrigger="false" mat-button>
-          <i class="material-icons usericon">person</i>
-          <span class="username">{{user.displayName}}</span>
-        </button>
+  <mat-sidenav-content >
+    <mat-toolbar>
+      <div class="menu-limiter">
+        <div class="logo">
+          <img src="../../assets/imgs/logo_branca.png" alt="logo">
+        </div>
+        <div class="links">
+          <button mat-button routerLink="/">Home</button>
+          <button mat-button routerLink="/events">Eventos</button>
+          <button *ngIf="!user" mat-button routerLink="/login">Login</button>
+          <button *ngIf="user" [matMenuTriggerFor]="menu" overlapTrigger="false" mat-button>
+            <i class="material-icons usericon">person</i>
+            <span class="username">{{user.displayName}}</span>
+          </button>
 
-        <mat-menu style="max-width: 320px !important; padding: 10px;" class="user-menu" #menu="matMenu">
-          <div *ngIf="user" class="user-box">
-            <div class="avatar-box">
-              <img class="avatar" [src]="user.photoURL">
+          <mat-menu style="max-width: 320px !important; padding: 10px;" class="user-menu" #menu="matMenu">
+            <div *ngIf="user" class="user-box">
+              <div class="avatar-box">
+                <img class="avatar" [src]="user.photoURL">
+              </div>
+              <div class="info-box">
+                <span class="username username2">{{user.displayName}}</span>
+                <span class="username useremail">{{user.email}}</span>
+              </div>
             </div>
-            <div class="info-box">
-              <span class="username username2">{{user.displayName}}</span>
-              <span class="username useremail">{{user.email}}</span>
-            </div>
-          </div>
-          <button mat-menu-item routerLink="/admin">Admin</button>
-          <hr>
-          <button mat-menu-item routerLink="/event">Criar Evento</button>
-          <button mat-menu-item routerLink="#">Meus Eventos</button>
-          <hr>
-          <button mat-menu-item routerLink="#">
-            <mat-icon>how_to_reg</mat-icon>
-            Configuração
-          </button>
-          <button mat-menu-item (click)="afService.logout()">
-            <mat-icon>exit_to_app</mat-icon>
-            Logout
-          </button>
-        </mat-menu>
-        
+            <button mat-menu-item routerLink="/admin">Admin</button>
+            <hr>
+            <button mat-menu-item routerLink="/event">Criar Evento</button>
+            <button mat-menu-item routerLink="#">Meus Eventos</button>
+            <hr>
+            <button mat-menu-item routerLink="#">
+              <mat-icon>how_to_reg</mat-icon>
+              Configuração
+            </button>
+            <button mat-menu-item (click)="afService.logout()">
+              <mat-icon>exit_to_app</mat-icon>
+              Logout
+            </button>
+          </mat-menu>
+        </div>
       </div>
     </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-
-<!-- <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport="false"
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="!(isHandset$ | async)!.matches">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
-    <mat-nav-list>      
-      <a *ngIf="!user" mat-list-item href="/login">Login</a>
-      <a mat-list-item href="/">Home</a>
-      <button *ngIf="user" mat-list-item href="/events">Eventos</button>
-      <button mat-list-item *ngIf="user" mat-button (click)="AfService.logout()">Logout</button>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">group_work</mat-icon>
-      </button>
-      <button mat-button routerLink="/">Hands On</button>
-      <span class="spacer"></span>
-      <button *ngIf="!user" mat-button routerLink="/login">Login</button>
-      <div *ngIf="user">
-        <mat-menu #menu="matMenu" x-position="after" y-position="below" overlapTrigger="false">
-          <button mat-menu-item>
-            <mat-icon>how_to_reg</mat-icon>
-            <span>Perfil</span>
-          </button>
-          <button mat-menu-item (click)="afService.logout()" routerLink="/">
-            <mat-icon>exit_to_app</mat-icon>
-            <span>Logout</span>
-          </button>
-        </mat-menu>
-        <button mat-button routerLink="/event">Criar Evento</button>
-        <button mat-button routerLink="/events">Eventos</button>
-        <button mat-button routerLink="/admin">Admin</button>
-        
-        <button mat-button [matMenuTriggerFor]="menu">            
-          <span>Olá {{user.displayName}}</span>
-          <img class="avatar" [src]="user.photoURL">
-        </button>
-      </div>
-    </mat-toolbar>
-    <ng-content></ng-content>
-  </mat-sidenav-content>
-</mat-sidenav-container> -->
