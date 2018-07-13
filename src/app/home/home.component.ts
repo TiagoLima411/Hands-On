@@ -12,15 +12,15 @@ import { Observable } from 'rxjs';
 
 export class HomeComponent implements OnInit {
   NgModuleMatCardModule
-  pagesObservable: Observable<any[]>;
+  events: Observable<any[]>;
 
   constructor(private db: AngularFireDatabase) { }
 
   ngOnInit() {
-    this.pagesObservable = this.getPages('/events');
+    this.events = this.getPages('/events');
   }
   
   getPages(listPath): Observable<any[]> {
-    return this.db.list(listPath).valueChanges();
+    return this.db.list(listPath, ref => ref.orderByChild('active').equalTo(Boolean(true))).valueChanges();
   }
 }

@@ -27,8 +27,4 @@ export class EventListComponent implements OnInit {
       this.events = events;
     });
   }
- 
-  deleteEvents() {
-    this.eventService.deleteAll();
-  }
 }
