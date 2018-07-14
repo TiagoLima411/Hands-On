@@ -5,7 +5,7 @@ export class Event {
     voluntarios : Number;
     likes: Number;
     local : String;
-    data: Date;      
+    criadoEm: Date;      
     descricao: String;
     urlImage: String;
     active: boolean;
