@@ -43,7 +43,7 @@
 </div>
 
 <h1>Eventos</h1>
-<div style="margin-left: 20px" *ngFor="let page of pagesObservable | async">
+<div style="margin-left: 20px" *ngFor="let page of events | async">
     <mat-card class="evento-card">
         <mat-card-header>
           <mat-card-title><strong>{{page.nome}}</strong></mat-card-title>
