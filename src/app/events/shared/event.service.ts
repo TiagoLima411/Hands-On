@@ -9,12 +9,13 @@ import { Event } from './event';
 export class EventService {
   
   private dbPath = '/events';
+  private db: AngularFireDatabase;
 
   eventsRef: AngularFireList<Event> = null;
   userId: String;
 
-  constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth) {
-    this.eventsRef = db.list(this.dbPath);
+  constructor(private afd: AngularFireDatabase, private afAuth: AngularFireAuth) {
+    this.db = afd;
     this.afAuth.authState.subscribe(user => {
       if(user) this.userId = user.uid
     })
@@ -35,7 +36,9 @@ export class EventService {
  
   getEventList(): AngularFireList<Event> {
     if (!this.userId) return;
-    return this.eventsRef;
+    return this.eventsRef = this.db.list(
+      this.dbPath, ref => ref.orderByChild('userId').equalTo(String(this.userId))
+    );;
   }
  
   deleteAll(): void {

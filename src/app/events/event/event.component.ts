@@ -34,16 +34,3 @@ export class EventComponent implements OnInit {
     this.save();
   }
 }
-
-@Component({
-  selector: 'snack-bar-component-example-snack',
-  template: `<p class="snake-bar"><strong>
-  Evento salvo com sucesso! 
-</strong></p>`,
-  styles: [`
-    .snake-bar {
-      color: #bbff00;
-    }
-  `],
-})
-export class PizzaPartyComponent {}
