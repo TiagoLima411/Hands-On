@@ -26,7 +26,7 @@ export class EventService {
   createEvent(event: Event): void {
     event.userId = this.userId;
     event.likes = 0;
-    event.criadoEm = new Date().toLocaleDateString();
+    event.criadoEm = this.data.toISOString().substring(0, 10);
     this.eventsRef.push(event);
   }
  
