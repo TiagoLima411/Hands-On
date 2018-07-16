@@ -1,4 +1,4 @@
-<!-- <div [hidden]="submitted" style="width: 300px;">    
+<div [hidden]="submitted" style="width: 300px;">    
   <mat-card class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
@@ -8,7 +8,7 @@
     <mat-card-content>
 
       <form (ngSubmit)="onSubmit()">
-        <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="eventService.selectedEvent.$key">
+        <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="event.$key">
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Nome do evento" id="nome" name="nome" [(ngModel)]="event.nome" required>
         </mat-form-field>
@@ -16,34 +16,33 @@
             <input matInput placeholder="Quantidade mínima de voluntários" id="voluntarios" name="voluntarios" [(ngModel)]="event.voluntarios" type="number" required>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Local" id="local" name="local" [(ngModel)]="eventService.selectedEvent.local" required>
+            <input matInput placeholder="Local" id="local" name="local" [(ngModel)]="event.local" required>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <textarea matInput style="height: 50px;" placeholder="Descricao" name="descricao" #descricao="ngModel" [(ngModel)]="eventService.selectedEvent.descricao" required></textarea>
+            <textarea matInput style="height: 50px;" placeholder="Descricao" name="descricao" #descricao="ngModel" [(ngModel)]="event.descricao" required></textarea>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="urlImage" name="urlImage" #urlImage="ngModel" [(ngModel)]="eventService.selectedEvent.urlImage" required>
+            <input matInput placeholder="urlImage" name="urlImage" #urlImage="ngModel" [(ngModel)]="event.urlImage" required>
         </mat-form-field>
         <mat-form-field>
-          <input matInput [matDatepicker]="picker" placeholder="Escolha uma data" name="data" #data="ngModel" [(ngModel)]="eventService.selectedEvent.data" required>
+          <input matInput [matDatepicker]="picker" placeholder="Escolha uma data" name="criadoEm" #criadoEm="ngModel" [(ngModel)]="event.criadoEm" required>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
         <div>
-          <button type="submit" class="btn btn-success">Submit</button>
-          <div [hidden]="!submitted">
-            <h4>You submitted successfully!</h4>
-            <button class="btn btn-success" (click)="newevent()">Add</button>
-          </div>
-            Reset</button>
+          <button type="submit" class="btn btn-success">Submit</button>            
         </div>
-
       </form>
     </mat-card-content>
   </mat-card>
-</div> -->
-<h3>Create Event</h3>
+</div> 
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="newEvent()">Add</button>
+</div>
+<!--<h3>Create Event</h3>
 <div [hidden]="submitted" style="width: 300px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -77,6 +76,6 @@
 <div [hidden]="!submitted">
   <h4>You submitted successfully!</h4>
   <button class="btn btn-success" (click)="newEvent()">Add</button>
-</div>
+</div> -->
 
 <event-list></event-list>

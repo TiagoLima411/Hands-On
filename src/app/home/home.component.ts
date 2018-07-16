@@ -15,19 +15,16 @@ import { User } from '../providers/user';
 export class HomeComponent implements OnInit {
   user: User;
   NgModuleMatCardModule
-  pagesObservable: Observable<any[]>;
+  events: Observable<any[]>;
 
   constructor(private db: AngularFireDatabase,
     public afService: AfService) { }
 
   ngOnInit() {
-    this.afService.user$.subscribe(user => {
-      this.user = user;
-    });
-    this.pagesObservable = this.getPages('/events');
+    this.events = this.getPages('/events');
   }
   
   getPages(listPath): Observable<any[]> {
-    return this.db.list(listPath).valueChanges();
+    return this.db.list(listPath, ref => ref.orderByChild('active').equalTo(Boolean(true))).valueChanges();
   }
 }

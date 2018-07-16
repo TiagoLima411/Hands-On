@@ -13,16 +13,20 @@ export class EventService {
 
   eventsRef: AngularFireList<Event> = null;
   userId: String;
+  data: Date; 
 
   constructor(private afd: AngularFireDatabase, private afAuth: AngularFireAuth) {
+    this.data = new Date();
     this.db = afd;
     this.afAuth.authState.subscribe(user => {
       if(user) this.userId = user.uid
     })
   }
- 
+
   createEvent(event: Event): void {
     event.userId = this.userId;
+    event.likes = 0;
+    event.criadoEm = this.data.toISOString().substring(0, 10);
     this.eventsRef.push(event);
   }
  
@@ -41,9 +45,16 @@ export class EventService {
     );;
   }
  
-  deleteAll(): void {
-    this.eventsRef.remove().catch(error => this.handleError(error));
+  getEventListHome(): AngularFireList<Event> {
+    if (!this.userId) return;
+    return this.eventsRef = this.db.list(
+      this.dbPath, ref => ref.orderByChild('active').equalTo(Boolean(true))
+    );;
   }
+
+  /*deleteAll(): void {
+    this.eventsRef.remove().catch(error => this.handleError(error));
+  }*/
  
   private handleError(error) {
     console.log(error);

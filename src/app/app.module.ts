@@ -24,6 +24,7 @@ import { EventComponent} from './events/event/event.component';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { FormsModule} from '@angular/forms';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
+import { AboutComponent } from './about/about.component';
 
 
 const appRoutes: Routes = [
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
   { path: 'signin', component: SigninPageComponent },
   { path: 'events', component: EventListComponent, canActivate: [SubscriberGuard] },
   { path: 'event', component: EventComponent, canActivate: [SubscriberGuard] },
-  { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuard] }
+  { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuard] },
+  { path: 'about', component:AboutComponent }
 ]
 
 @NgModule({
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     EventComponent,
     EventListComponent,
     EventDetailComponent,
-    SigninPageComponent
+    SigninPageComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

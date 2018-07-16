@@ -6,13 +6,13 @@
       <h2>Faça parte de um dos projetos, colabore e compartilhe emoções.</h2>
       <div class="button-row">
         <button mat-raised-button>Sobre a Hands On</button>
-        <button *ngIf="user" class="botao-eventos" mat-raised-button>Todos os eventos</button>
-        <button *ngIf="!user" class="botao-cadastro" mat-raised-button routerLink="/signin">Cadastre-se</button>
+        <button *ngIf="!user" class="botao-eventos" mat-raised-button routerLink="/events" >Meus eventos</button>
+        <button *ngIf="user" class="botao-cadastro" mat-raised-button routerLink="/signin">Cadastre-se</button>
       </div>
     </div>
   </div>  
 </section>
-
+  
 <section class="about">
   <h1>Quem somos?</h1>
   <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for.</p>
@@ -47,12 +47,12 @@
   </div>
 </section>
 
-<div class="img-space1"></div>
-
 <section class="events">
-  <h1>Ultimos Eventos</h1>
+  <div class="img-space1">
+    <h1>Ultimos Eventos</h1>
+  </div>
   <div class="content-event">
-    <mat-card *ngFor="let page of pagesObservable | async" class="card-event">
+    <mat-card *ngFor="let page of events | async" class="card-event">
       <div class="img-event">
         <img mat-card-image src="{{page.urlImage}}" alt="Imagem evento">
       </div>
@@ -77,3 +77,16 @@
     </mat-card>
   </div>
 </section>
+
+<footer>
+  <div class="content-footer">
+    <img class="logo-footer" src="../../assets/imgs/logo_branca.png" alt="logo">
+    <div class="social-media">
+        <a href="http://facebook.com"><img class="facebook-icon" src="../../assets/imgs/facebook-icon.png" alt="facebook"></a>
+        <a href="http://instagram.com"><img class="instagram-icon" src="../../assets/imgs/instagram-icon.png" alt="instagram"></a>
+        <a href="http://whatsapp.com"><img class="whatsapp-icon" src="../../assets/imgs/whatsapp-icon.png" alt="whatsapp"></a>
+    </div>
+  </div>
+  <hr>
+  <p>Todos os direitos reservados Hands On - 2018</p>
+</footer>
