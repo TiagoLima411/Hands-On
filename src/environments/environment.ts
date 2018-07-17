@@ -9,7 +9,7 @@ export const environment = {
     authDomain: "hands-on-66a6d.firebaseapp.com",
     databaseURL: "https://hands-on-66a6d.firebaseio.com",
     projectId: "hands-on-66a6d",
-    storageBucket: "",
+    storageBucket: "hands-on-66a6d.appspot.com",
     messagingSenderId: "10199736074"
   }
 };
