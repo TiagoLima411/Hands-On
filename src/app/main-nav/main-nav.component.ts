@@ -13,17 +13,18 @@ import { User } from '../providers/user';
 export class MainNavComponent implements OnInit {
   user: User;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches)
-    );
-    
+  .pipe(
+    map(result => result.matches)
+  );
+  
   constructor(private breakpointObserver: BreakpointObserver,
-              public afService: AfService) {}
-
-  ngOnInit() {
-    this.afService.user$.subscribe(user => {
-      this.user = user;
-    });
-  }
+    public afService: AfService) {}
+    
+    ngOnInit() {
+      this.afService.user$.subscribe(user => {
+        this.user = user;
+      });
+      
+    }
   
 }

@@ -8,11 +8,10 @@
 
 mat-sidenav-content {
   margin: 0 !important;
-
 }
 
 mat-toolbar{
-  background: rgba(0,0,0,.8);
+  background: rgba(0,0,0,.9);
   position: fixed;
   top: 0;
   left: 0;

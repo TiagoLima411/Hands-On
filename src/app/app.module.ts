@@ -12,6 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { SigninPageComponent } from './signin-page/signin-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AfService } from './providers/af.service';
 import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
@@ -23,15 +24,18 @@ import { EventComponent} from './events/event/event.component';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { FormsModule} from '@angular/forms';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
+import { AboutComponent } from './about/about.component';
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginPageComponent },
+  { path: 'signin', component: SigninPageComponent },
   { path: 'events', component: EventListComponent, canActivate: [SubscriberGuard] },
   { path: 'event', component: EventComponent, canActivate: [SubscriberGuard] },
-  { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuard] }
+  { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuard] },
+  { path: 'about', component:AboutComponent }
 ]
 
 @NgModule({
@@ -44,7 +48,9 @@ const appRoutes: Routes = [
     EventsComponent,
     EventComponent,
     EventListComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    SigninPageComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

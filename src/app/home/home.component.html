@@ -1,4 +1,4 @@
-<div id="home" class="banner">
+<section class="banner">
   <div class="darkening"></div>
   <div class="content-banner">
     <div class="limit">
@@ -6,65 +6,87 @@
       <h2>Faça parte de um dos projetos, colabore e compartilhe emoções.</h2>
       <div class="button-row">
         <button mat-raised-button>Sobre a Hands On</button>
-        <button class="botao-eventos" mat-raised-button>Todos os eventos</button>
+        <button *ngIf="!user" class="botao-eventos" mat-raised-button routerLink="/events" >Meus eventos</button>
+        <button *ngIf="user" class="botao-cadastro" mat-raised-button routerLink="/signin">Cadastre-se</button>
       </div>
     </div>
   </div>  
+</section>
+  
+<section class="about">
+  <h1>Quem somos?</h1>
+  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for.</p>
+  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+  <div class="card-about">
+    <ul>
+      <li class="card1">
+        <h2>Somos +</h2>
+        <hr>
+        <h3>Algum Nome</h3>
+        <i class="material-icons icon1">favorite</i>
+      </li>
+      <li class="card2">
+        <h2>Somos +</h2>
+        <hr>
+        <h3>Algum Nome</h3>
+        <i class="material-icons icon2">face</i>
+      </li>
+      <li class="card3">
+        <h2>Somos +</h2>
+        <hr>
+        <h3>Algum Nome</h3>
+        <i class="material-icons icon3">public</i>
+      </li>
+      <li class="card4">
+        <h2>Somos +</h2>
+        <hr>
+        <h3>Algum Nome</h3>
+        <i class="material-icons icon4">redeem</i>
+      </li>
+    </ul>
+  </div>
+</section>
 
-
-
-
-  <!-- <div>    
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Cadastre-se</mat-card-title>
-        <mat-card-subtitle>Junte-se a nossa comunidade </mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src="../../assets/imgs/cadastro.jpg" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-          <form class="example-form">
-              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Nome">
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <input type="email" matInput placeholder="email">
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                  <input type="password" matInput placeholder="password">
-              </mat-form-field>
-            </form>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Cadastrar</button>
+<section class="events">
+  <div class="img-space1">
+    <h1>Ultimos Eventos</h1>
+  </div>
+  <div class="content-event">
+    <mat-card *ngFor="let page of events | async" class="card-event">
+      <div class="img-event">
+        <img mat-card-image src="{{page.urlImage}}" alt="Imagem evento">
+      </div>
+      <div class="text-event">
+        <mat-card-content>
+          <mat-card-title class="title-event">{{page.nome}}</mat-card-title>
+          <p>{{page.descricao}}</p>
+          <p><strong>Quantidade mínima de voluntários: </strong>{{page.voluntarios}}</p>
+          <div class="local-event">
+            <p>Maceió{{page.local.localidade}}/AL{{page.local.uf}}</p>
+            <p>Poço {{page.local.bairro}}</p>
+            <p>Rua xyz123 {{page.local.logradouro}}</p>
+            <p>Nº: 666{{page.local.num}}</p>
+            <p>Próximo a lugar nenhum{{page.local.complemento}}</p>
+          </div>
+        </mat-card-content>
+      </div>
+      <mat-card-actions class="button-event">
+        <button mat-button>Curtir</button>
+        <button mat-button>Voluntário</button>
       </mat-card-actions>
     </mat-card>
-  </div> -->
-</div>
+  </div>
+</section>
 
-<h1>Eventos</h1>
-<div style="margin-left: 20px" *ngFor="let page of events | async">
-    <mat-card class="evento-card">
-        <mat-card-header>
-          <mat-card-title><strong>{{page.nome}}</strong></mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="{{page.urlImage}}" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <strong>Descrição: </strong><p style="margin-left: 15px">{{page.descricao}}</p>
-          <hr style="margin: 15px">
-          <strong>Quantidade mínima de voluntários:  </strong>{{page.voluntarios}}
-          <hr style="margin: 15px">
-          <strong>Local: </strong>
-          <p style="margin-left: 15px">UF:  {{page.local.uf}}</p>
-          <p style="margin-left: 15px">Localidade:  {{page.local.localidade}}</p>
-          <p style="margin-left: 15px">Bairro:  {{page.local.bairro}}</p>
-          <p style="margin-left: 15px">Logradouro:  {{page.local.logradouro}}</p>
-          <p style="margin-left: 15px">Complemento:  {{page.local.complemento}}</p>
-          <p style="margin-left: 15px">Nº:  {{page.local.num}}</p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>Curtir</button>
-          <button mat-button>Voluntário</button>
-        </mat-card-actions>
-      </mat-card>
-</div>
+<footer>
+  <div class="content-footer">
+    <img class="logo-footer" src="../../assets/imgs/logo_branca.png" alt="logo">
+    <div class="social-media">
+        <a href="http://facebook.com"><img class="facebook-icon" src="../../assets/imgs/facebook-icon.png" alt="facebook"></a>
+        <a href="http://instagram.com"><img class="instagram-icon" src="../../assets/imgs/instagram-icon.png" alt="instagram"></a>
+        <a href="http://whatsapp.com"><img class="whatsapp-icon" src="../../assets/imgs/whatsapp-icon.png" alt="whatsapp"></a>
+    </div>
+  </div>
+  <hr>
+  <p>Todos os direitos reservados Hands On - 2018</p>
+</footer>
