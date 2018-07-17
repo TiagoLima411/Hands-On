@@ -2,12 +2,12 @@
   <div class="darkening"></div>
   <div class="content-banner">
     <div class="limit">
-      <h1>O que para uns pode ser pouco, para outros pode ser muito.</h1>
+      <h1 (click)="teste()">O que para uns pode ser pouco, para outros pode ser muito.</h1>
       <h2>Faça parte de um dos projetos, colabore e compartilhe emoções.</h2>
       <div class="button-row">
         <button mat-raised-button>Sobre a Hands On</button>
-        <button *ngIf="!user" class="botao-eventos" mat-raised-button routerLink="/events" >Meus eventos</button>
-        <button *ngIf="user" class="botao-cadastro" mat-raised-button routerLink="/signin">Cadastre-se</button>
+        <button *ngIf="user" class="botao-eventos" mat-raised-button routerLink="/events" >Meus eventos</button>
+        <button *ngIf="!user" class="botao-cadastro" mat-raised-button routerLink="/signin">Cadastre-se</button>
       </div>
     </div>
   </div>  
@@ -77,16 +77,3 @@
     </mat-card>
   </div>
 </section>
-
-<footer>
-  <div class="content-footer">
-    <img class="logo-footer" src="../../assets/imgs/logo_branca.png" alt="logo">
-    <div class="social-media">
-        <a href="http://facebook.com"><img class="facebook-icon" src="../../assets/imgs/facebook-icon.png" alt="facebook"></a>
-        <a href="http://instagram.com"><img class="instagram-icon" src="../../assets/imgs/instagram-icon.png" alt="instagram"></a>
-        <a href="http://whatsapp.com"><img class="whatsapp-icon" src="../../assets/imgs/whatsapp-icon.png" alt="whatsapp"></a>
-    </div>
-  </div>
-  <hr>
-  <p>Todos os direitos reservados Hands On - 2018</p>
-</footer>

@@ -35,7 +35,7 @@ const appRoutes: Routes = [
   { path: 'events', component: EventListComponent, canActivate: [SubscriberGuard] },
   { path: 'event', component: EventComponent, canActivate: [SubscriberGuard] },
   { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuard] },
-  { path: 'about', component:AboutComponent }
+  { path: 'about', component: AboutComponent }
 ]
 
 @NgModule({
