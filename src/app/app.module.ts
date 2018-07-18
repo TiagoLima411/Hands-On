@@ -25,6 +25,7 @@ import { EventListComponent } from './events/event-list/event-list.component';
 import { FormsModule} from '@angular/forms';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
 import { AboutComponent } from './about/about.component';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 
 const appRoutes: Routes = [
@@ -71,6 +72,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     AngularFirestoreModule,    
     AngularFireAuthModule,
+    AngularFireStorageModule,
     FormsModule,
     RouterModule.forRoot(
       appRoutes
