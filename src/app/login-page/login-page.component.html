@@ -1,39 +1,38 @@
-<div *ngIf="!user">    
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Login</mat-card-title>
-        
-      </mat-card-header>
-      <img mat-card-image src="../../assets/imgs/cadastro.jpg" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-          <form class="example-form">
-              <mat-form-field class="example-full-width">
-                <input matInput placeholder="Nome">
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <input type="email" matInput placeholder="email">
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                  <input type="password" matInput placeholder="password">
-              </mat-form-field>
-            </form>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button (click)="login()">Login com google</button>
-      </mat-card-actions>
-  </mat-card>
-</div>
-<div *ngIf="user">
-  <mat-card class="example-card">
-      <img mat-card-image src="../../assets/imgs/cadastro.jpg" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-          <h3>Bem vindo a nossa plataforma {{user.displayName}} nela vc poderá criar eventos para fins sociais.</h3>
-          <p>Caso use nossa plataforma para outros fins que não seja a finalidade citada acima, sua conta será automaticamente bloqueada.</p>
-          <p><strong>Grato pelo seu ingresso!</strong></p>
-      </mat-card-content>      
-  </mat-card>
+<div class="login-page">
+  <div class="page-title">
+    <div class="text">
+      <h1>LOGIN</h1>
+      <h2><a routerLink="/home">HOME</a><span> /</span> ACESSAR SUA CONTA</h2>
+    </div>
+  </div>
+
+  <div class="form" *ngIf="!user">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nome">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input type="email" matInput placeholder="email">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input type="password" matInput placeholder="password">
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="acessar-buttom"><img src="../../assets/imgs/logo_sem_nome.png">Acessar sua conta</button>
+      <p>OU</p>
+      <button mat-raised-button class="google-buttom" (click)="login()"><img src="../../assets/imgs/google-icon.png">Login com google</button>
+    </form>
+    <p class="cadastro">Ainda não possui conta? <a routerLink="/signin">Clique aqui e cadastre-se!</a></p>
+  </div>
   
+  <div class="form" *ngIf="user">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <h3>Bem vindo a nossa plataforma {{user.displayName}} nela vc poderá criar eventos para fins sociais.</h3>
+        <p>Caso use nossa plataforma para outros fins que não seja a finalidade citada acima, sua conta será automaticamente bloqueada.</p>
+        <p><strong>Grato pelo seu ingresso!</strong></p>
+      </mat-card-content>      
+    </mat-card>
+  </div>
 </div>
 
 <!-- <div *ngIf="user">

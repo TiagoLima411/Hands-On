@@ -1,10 +1,121 @@
-.example-card {
-    max-width: 250px;
-    margin: 0 auto;
-    margin-top: 3%; 
+.login-page{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
 }
 
-.example-header-image {
-    background-image: url('../../assets/imgs/avatar-cadastro.jpg');
+/* PAGE-TITLE */
+
+.page-title{
+    width: 100%;
+    height: 364px;
+    background: url("../../assets/imgs/banner2.jpg") no-repeat;
     background-size: cover;
+    background-position: bottom;
+}
+
+.text{
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    text-shadow: 0 0 10px #000;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text h1{
+    font-size: 30px;
+    margin: 32px 0 5px 0;
+}
+
+.text h2{
+    font-size: 16px;
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.text h2 a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.text h2 a:hover{
+    border-bottom: 1px solid #ff9925;
+}
+
+.text h2 span{
+    color: #ff9925;
+}
+
+/* FORM */
+
+.form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0 100px;
+}
+
+.example-form {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    /* background: red; */
+}
+
+.example-full-width{
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    height: 45px;
+    margin-bottom: 20px;
+}
+
+.acessar-buttom{
+    border-radius: 4px;
+    padding: 4px 0;
+}
+
+.acessar-buttom img{
+    height: 22px;
+    margin: 0 10px 0 0;
+}
+
+.form p{
+    text-align: center;
+}
+
+.google-buttom{
+    background: #dd4b39;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 4px 0;
+}
+
+.google-buttom img{
+    height: 25px;
+    margin: 0 10px 0 0;
+}
+
+.form .cadastro{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.form .cadastro a{
+    text-decoration: none;
+    color: #808080;
+}
+
+.form .cadastro a:hover{
+    color: #202020;
+    border-bottom: 1px solid #202020;
 }

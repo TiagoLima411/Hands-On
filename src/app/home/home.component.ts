@@ -26,10 +26,6 @@ export class HomeComponent implements OnInit {
       this.user = user;
     });
   }
-
-  teste(){
-    console.log(this.user)
-  }
   
   getPages(listPath): Observable<any[]> {
     return this.db.list(listPath, ref => ref.orderByChild('active').equalTo(Boolean(true))).valueChanges();
