@@ -1,0 +1,269 @@
+.about-page{
+    font-family: Roboto;
+}
+
+/* PAGE-TITLE */
+
+.page-title{
+    width: 100%;
+    height: 364px;
+    background: url("../../assets/imgs/banner4.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.text{
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    text-shadow: 0 0 10px #000;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text h1{
+    font-size: 30px;
+    margin: 32px 0 5px 0;
+}
+
+.text h2{
+    font-size: 16px;
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.text h2 a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.text h2 a:hover{
+    border-bottom: 1px solid #ff9925;
+}
+
+.text h2 span{
+    color: #ff9925;
+}
+
+/* WHO / OBJECTIVES */
+
+.who-objectives{
+    width: 100%;
+    max-width: 1300px;
+    margin: 70px auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.who-objectives div{
+    width: 49%;
+}
+
+.who h1{
+    font-size: 35px;
+    color: #333;
+    margin-right: 20px;
+}
+
+.who h1 span{
+    color: #ff9925;
+}
+
+.who p{
+    line-height: 24px;
+    color: #333;
+    text-align: justify;
+    margin-right: 20px;
+}
+
+.who p.first{
+    font-weight: bold;
+}
+
+.objectives{
+    background: #ff9925;
+    min-height: 250px;
+    align-self: flex-end;
+    margin-bottom: 30px;
+}
+
+.objectives div{
+    width: calc(100% - 120px);
+    padding: 50px 60px;
+}
+
+.objectives div h2{
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    color: #222;
+    font-weight: normal;
+}
+
+.objectives div p{
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 25px;
+    color: #222;
+    text-align: justify;
+}
+
+.about-page hr{
+    max-width: 1300px;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    margin: 60px auto;
+}
+
+/* ABOUT */
+
+.card-about{
+    width: 100%;
+    max-width: 1300px;
+    margin: 70px auto 0;
+}
+
+.card-about ul{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.card-about ul li{
+    background: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+    width: 200px;
+    list-style: none;
+    text-align: center;
+    padding-bottom: 15px;
+    margin: 0 20px 30px;
+}
+
+.card-about ul li hr{
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: none;
+    width: 80%;
+    margin: 30px auto;
+}
+
+.card-about ul li h3{
+    font-weight: normal;
+    font-size: 20px;
+    color: #414141;
+}
+
+.card-about ul li i{
+    font-size: 40px;
+}
+
+.card-about .icon1{
+    color: #c70000;
+}
+
+.card-about .icon2{
+    color: #0047ca;
+}
+
+.card-about .icon3{
+    color: #008000;
+}
+
+.card-about .icon4{
+    color: #ff9100;
+}
+
+/* WHAT WE DO */
+
+.whatWeDo{
+    max-width: 1300px;
+    margin: 50px auto 100px;
+}
+
+.whatWeDo h1{
+    text-align: center;
+    font-size: 35px;
+}
+
+.whatWeDo h1 span{
+    color: #ff9925;
+}
+
+.whatWeDo ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.whatWeDo ul li{
+    list-style: none;
+    width: 30vw;
+    margin: 20px 1.5vw;
+}
+
+.whatWeDo ul li h2{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.whatWeDo ul li i{
+    font-size: 45px;
+    color: #ff9100;
+    margin-right: 15px;
+}
+
+.whatWeDo ul li p{
+    padding: 0;
+    margin: 0 0 0 60px;
+}
+
+@media only screen and (max-width: 990px){
+    /* WHO / OBJECTIVES */
+
+    .who-objectives{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .who-objectives div{
+        margin: auto;
+        width: 90%;
+    }
+
+    .who h1{
+        margin-right: 0;
+    }
+
+    .who p{
+        margin-right: 0;
+    }
+
+    .who p:last-child{
+        margin-bottom: 60px;
+    }
+
+    .objectives div{
+        width: calc(100% - 120px);
+    }
+
+    /* WHAT WE DO */
+
+    .whatWeDo ul{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .whatWeDo ul li{
+        width: auto;
+    }
+}

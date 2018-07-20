@@ -72,9 +72,6 @@ app-home{
 }
 
 @media only screen and (max-width: 990px){
-    .banner{
-    }
-
     .content-banner{
         width: 100%;
         display: flex;

@@ -8,6 +8,7 @@
         <div class="links">
           <button mat-button routerLink="/">Home</button>
           <button mat-button routerLink="/about">Sobre nós</button>
+          <button mat-button routerLink="/contact">Contato</button>
           <button *ngIf="!user" mat-button routerLink="/login">Login</button>
           <button *ngIf="user" [matMenuTriggerFor]="menu" overlapTrigger="false" mat-button>
             <i class="material-icons usericon">person</i>
@@ -42,6 +43,7 @@
       </div>
     </mat-toolbar>
     
+    <div class="gambiarra"></div>
     <ng-content></ng-content>
     
     <footer>

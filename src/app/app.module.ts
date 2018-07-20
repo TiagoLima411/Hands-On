@@ -26,6 +26,7 @@ import { FormsModule} from '@angular/forms';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
 import { AboutComponent } from './about/about.component';
 import { AngularFireStorageModule } from 'angularfire2/storage';
+import { ContactComponent } from './contact/contact.component';
 
 
 const appRoutes: Routes = [
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
   { path: 'events', component: EventListComponent, canActivate: [SubscriberGuard] },
   { path: 'event', component: EventComponent, canActivate: [SubscriberGuard] },
   { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuard] },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent }
 ]
 
 @NgModule({
@@ -51,7 +53,8 @@ const appRoutes: Routes = [
     EventListComponent,
     EventDetailComponent,
     signupPageComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

@@ -103,6 +103,10 @@ hr{
   border-bottom: none;
 }
 
+.menu-mobile{
+  display: none;
+}
+
 @media only screen and (max-width: 445px) {
   .menu-limiter{
     display: flex;
@@ -118,6 +122,14 @@ hr{
     margin-left: 0;
   }
 
+  mat-toolbar{
+    position: relative;
+  }
+
+  .gambiarra{
+    height: 174px;
+  }
+
   .links{
     display: flex;
     flex-direction: column;
@@ -125,7 +137,7 @@ hr{
     align-items: center;
     width: 100%;
     background: rgba(0,0,0,.9);
-    margin: 5px 0 0;
+    margin: 6px 0 0;
     padding: 10px 0 0;
   }
 }
