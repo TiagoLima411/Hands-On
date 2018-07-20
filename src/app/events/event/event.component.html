@@ -1,39 +1,47 @@
-<div [hidden]="submitted" style="width: 300px;">    
-  <mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Criar Evento</mat-card-title>
-    </mat-card-header>
-      <img mat-card-image src="../../assets/imgs/cadastro.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
+<div [hidden]="submitted">
+  <div class="page-title">
+    <div class="text">
+      <h1>Novo Evento</h1>
+      <h2><a routerLink="/home">HOME</a><span> /</span> CRIAR NOVO EVENTO</h2>
+    </div>
+  </div>
 
-      <form (ngSubmit)="onSubmit()">
-        
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Nome do evento" id="nome" name="nome" [(ngModel)]="event.nome" required>
-        </mat-form-field>
-        <input placeholder="Anexar Imagem" type="file" name="file" id="file" (change)="uploadImage($event)">
-        <mat-form-field class="example-full-width">
-            <input matInput placeholder="Quantidade mínima de voluntários" id="voluntarios" name="voluntarios" [(ngModel)]="event.voluntarios" type="number" required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <input matInput placeholder="Local" id="local" name="local" [(ngModel)]="event.local" required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <textarea matInput style="height: 50px;" placeholder="Descricao" name="descricao" #descricao="ngModel" [(ngModel)]="event.descricao" required></textarea>
-        </mat-form-field>
-        <!-- <mat-form-field>
-          <input matInput [matDatepicker]="picker" placeholder="Escolha uma data" name="criadoEm" #criadoEm="ngModel" [(ngModel)]="event.criadoEm" required>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field> -->
+  <div class="form" *ngIf="!user">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Criar Evento</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
 
-        <div>
-          <button type="submit" class="btn btn-success">Submit</button>            
-        </div>
-      </form>
-    </mat-card-content>
-  </mat-card>
+        <form (ngSubmit)="onSubmit()">
+          
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Nome do evento" id="nome" name="nome" [(ngModel)]="event.nome" required>
+          </mat-form-field>
+          <input placeholder="Anexar Imagem" type="file" name="file" id="file" (change)="uploadImage($event)">
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Quantidade mínima de voluntários" id="voluntarios" name="voluntarios" [(ngModel)]="event.voluntarios" type="number" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Local" id="local" name="local" [(ngModel)]="event.local" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+              <textarea matInput style="height: 50px;" placeholder="Descricao" name="descricao" #descricao="ngModel" [(ngModel)]="event.descricao" required></textarea>
+          </mat-form-field>
+          <!-- <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Escolha uma data" name="criadoEm" #criadoEm="ngModel" [(ngModel)]="event.criadoEm" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field> -->
+
+          <div>
+            <button type="submit" class="btn btn-success">Submit</button>            
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div> 
 
 <div [hidden]="!submitted">
@@ -75,5 +83,3 @@
   <h4>You submitted successfully!</h4>
   <button class="btn btn-success" (click)="newEvent()">Add</button>
 </div> -->
-
-<event-list></event-list>
