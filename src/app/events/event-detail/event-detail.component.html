@@ -1,4 +1,4 @@
-<div *ngIf="event">
+<!-- <div *ngIf="event">
   <div>
     <label>First Name: </label> {{event.nome}}
   </div>
@@ -12,10 +12,32 @@
   <button class="button is-small btn-primary" *ngIf='event.active' (click)='updateActive(false)'>Inactive</button>
  
   <button class="button is-small btn-primary" *ngIf='!event.active' (click)='updateActive(true)'>Active</button>
-
-  <button (click)='createVoluntario()'>Voluntario</button>
  
   <button class="button is-small btn-danger" (click)='deleteEvent()'>Delete</button>
  
   <hr/>
+</div>
+ -->
+<div *ngIf="event">
+  <mat-card class="card-event">
+      <div class="img-event">
+        <img mat-card-image src="{{event.urlImage}}" alt="Imagem evento">
+      </div>
+      <div class="text-event">
+        <mat-card-content>
+          <mat-card-title class="title-event">{{event.nome}}</mat-card-title>
+          <p>{{event.descricao}}</p>
+          <p><strong>Quantidade mínima de voluntários: </strong>{{event.voluntarios}}</p>
+          <div class="local-event">
+            <p>{{event.local}}</p>
+          </div>
+          <p>{{event.active}}</p>
+        </mat-card-content>
+      </div>
+    <mat-card-actions class="button-event">
+      <button mat-button *ngIf='event.active' (click)='updateActive(false)'>Inactive</button>
+      <button mat-button *ngIf='!event.active' (click)='updateActive(true)'>Active</button>
+      <button mat-button (click)='deleteEvent()'>Delete</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

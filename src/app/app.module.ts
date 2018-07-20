@@ -36,6 +36,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: signupPageComponent },
   { path: 'events', component: EventListComponent, canActivate: [SubscriberGuard] },
+  { path: 'allevents', component: EventsComponent, canActivate: [SubscriberGuard] },
   { path: 'event', component: EventComponent, canActivate: [SubscriberGuard] },
   { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuard] },
   { path: 'about', component: AboutComponent },

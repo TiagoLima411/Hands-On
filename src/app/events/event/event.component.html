@@ -1,18 +1,14 @@
-<div [hidden]="submitted">
-  <div class="page-title">
-    <div class="text">
-      <h1>Novo Evento</h1>
-      <h2><a routerLink="/home">HOME</a><span> /</span> CRIAR NOVO EVENTO</h2>
-    </div>
-  </div>
-
-  <div class="form" *ngIf="!user">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Criar Evento</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
+<div [hidden]="submitted">    
+    <div class="page-title">
+        <div class="text">
+          <h1>NOVO EVENTO</h1>
+          <h2><a routerLink="/home">HOME</a><span> /</span> CRIAR NOVO EVENTO</h2>
+        </div>
+      </div>
+  <mat-card class="example-card">
+    
+      
+    <mat-card-content>
 
         <form (ngSubmit)="onSubmit()">
           
@@ -35,13 +31,12 @@
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field> -->
 
-          <div>
-            <button type="submit" class="btn btn-success">Submit</button>            
-          </div>
-        </form>
-      </mat-card-content>
-    </mat-card>
-  </div>
+        <div>
+          <button mat-button color="warn" type="submit" class="btn btn-success">Submit</button>            
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div> 
 
 <div [hidden]="!submitted">

@@ -1,0 +1,67 @@
+.img-space1{
+    width: 100%;
+    height: 250px;
+    background: url("../../../assets/imgs/space.jpg") no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.img-space1 h1{
+    font-family: Roboto;
+    font-size: 40px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #000;
+    width: 100%;
+    height: 100%;
+    background: rgba(40, 20, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-event{
+    width: 100%;
+    max-width: 1300px;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-event {
+    width: 300px;
+    padding: 0;
+    margin: 10px;
+}
+
+.img-event{
+    height: 300px;
+    width: 100%;
+}
+
+.img-event img{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.text-event{
+    padding: 20px 20px 0;
+}
+
+.local-event p{
+    margin: 0;
+}
+
+.button-event{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-event button{
+    margin: 0 20px 20px 20px;
+}
