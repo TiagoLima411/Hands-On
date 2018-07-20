@@ -1,4 +1,4 @@
-.login-page{
+.signup-page{
     height: 100%;
     margin: 0;
     padding: 0;
@@ -79,12 +79,12 @@
     margin-bottom: 20px;
 }
 
-.acessar-buttom{
+.cadastrar-buttom{
     border-radius: 4px;
     padding: 4px 0;
 }
 
-.acessar-buttom img{
+.cadastrar-buttom img{
     height: 22px;
     margin: 0 10px 0 0;
 }

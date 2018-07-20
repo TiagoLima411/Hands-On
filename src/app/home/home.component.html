@@ -5,9 +5,9 @@
       <h1>O que para uns pode ser pouco, para outros pode ser muito.</h1>
       <h2>Faça parte de um dos projetos, colabore e compartilhe emoções.</h2>
       <div class="button-row">
-        <button mat-raised-button>Sobre a Hands On</button>
-        <button *ngIf="!user" class="botao-eventos" mat-raised-button routerLink="/events" >Meus eventos</button>
-        <button *ngIf="user" class="botao-cadastro" mat-raised-button routerLink="/signin">Cadastre-se</button>
+        <button mat-raised-button routerLink="/about">Sobre a Hands On</button>
+        <button *ngIf="user" class="botao-eventos" mat-raised-button routerLink="/events" >Meus eventos</button>
+        <button *ngIf="!user" class="botao-cadastro" mat-raised-button routerLink="/signup">Cadastre-se</button>
       </div>
     </div>
   </div>  
@@ -15,32 +15,32 @@
   
 <section class="about">
   <h1>Quem somos?</h1>
-  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for.</p>
-  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+  <p>A Hands On é uma aplicação desenvolvida por um grupo de 4 jovens, desafiados e motivados a viabilizar a melhor forma de organização de eventos sociais.</p>
+  <p>Somos um site de gerenciamento de eventos sem fins lucrativos, focado apenas em bem estar social, aqui você poderá criar e compartilhar seu evento de forma simples e rápida, com as informações mais importantes e uma breve descrição sobre o mesmo. Ao confirmar seu evento, ele ficará em nossa página principal juntamente os outros eventos, assim, dando maior visibilidade para sua realização. E estaremos na torcida para que a quantidade de pessoas com ideias parecidas, que podem ser voluntárias em algum projeto, ou que possam ajudar de alguma forma se unam para tornar possível sua ação social.</p>
   <div class="card-about">
     <ul>
       <li class="card1">
         <h2>Somos +</h2>
         <hr>
-        <h3>Algum Nome</h3>
+        <h3>Compaixão</h3>
         <i class="material-icons icon1">favorite</i>
       </li>
       <li class="card2">
         <h2>Somos +</h2>
         <hr>
-        <h3>Algum Nome</h3>
+        <h3>Companheirismo</h3>
         <i class="material-icons icon2">face</i>
       </li>
       <li class="card3">
         <h2>Somos +</h2>
         <hr>
-        <h3>Algum Nome</h3>
+        <h3>Sustentabilidade</h3>
         <i class="material-icons icon3">public</i>
       </li>
       <li class="card4">
         <h2>Somos +</h2>
         <hr>
-        <h3>Algum Nome</h3>
+        <h3>Solidariedade</h3>
         <i class="material-icons icon4">redeem</i>
       </li>
     </ul>
@@ -77,16 +77,3 @@
     </mat-card>
   </div>
 </section>
-
-<footer>
-  <div class="content-footer">
-    <img class="logo-footer" src="../../assets/imgs/logo_branca.png" alt="logo">
-    <div class="social-media">
-        <a href="http://facebook.com"><img class="facebook-icon" src="../../assets/imgs/facebook-icon.png" alt="facebook"></a>
-        <a href="http://instagram.com"><img class="instagram-icon" src="../../assets/imgs/instagram-icon.png" alt="instagram"></a>
-        <a href="http://whatsapp.com"><img class="whatsapp-icon" src="../../assets/imgs/whatsapp-icon.png" alt="whatsapp"></a>
-    </div>
-  </div>
-  <hr>
-  <p>Todos os direitos reservados Hands On - 2018</p>
-</footer>

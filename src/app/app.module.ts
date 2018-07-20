@@ -12,7 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
-import { SigninPageComponent } from './signin-page/signin-page.component';
+import { signupPageComponent } from './signup-page/signup-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AfService } from './providers/af.service';
 import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
@@ -27,17 +27,19 @@ import { EventDetailComponent } from './events/event-detail/event-detail.compone
 import { AboutComponent } from './about/about.component';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { VoluntarioService } from './events/shared/voluntario.service';
+import { ContactComponent } from './contact/contact.component';
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginPageComponent },
-  { path: 'signin', component: SigninPageComponent },
+  { path: 'signup', component: signupPageComponent },
   { path: 'events', component: EventListComponent, canActivate: [SubscriberGuard] },
   { path: 'event', component: EventComponent, canActivate: [SubscriberGuard] },
   { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuard] },
-  { path: 'about', component:AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent }
 ]
 
 @NgModule({
@@ -51,8 +53,9 @@ const appRoutes: Routes = [
     EventComponent,
     EventListComponent,
     EventDetailComponent,
-    SigninPageComponent,
-    AboutComponent
+    signupPageComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

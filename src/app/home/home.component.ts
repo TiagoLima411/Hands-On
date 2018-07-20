@@ -22,6 +22,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.events = this.getPages('/events');
+    this.afService.user$.subscribe(user => {
+      this.user = user;
+    });
   }
   
   getPages(listPath): Observable<any[]> {

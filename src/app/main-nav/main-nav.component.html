@@ -7,7 +7,8 @@
         </div>
         <div class="links">
           <button mat-button routerLink="/">Home</button>
-          <button mat-button routerLink="/events">Eventos</button>
+          <button mat-button routerLink="/about">Sobre nós</button>
+          <button mat-button routerLink="/contact">Contato</button>
           <button *ngIf="!user" mat-button routerLink="/login">Login</button>
           <button *ngIf="user" [matMenuTriggerFor]="menu" overlapTrigger="false" mat-button>
             <i class="material-icons usericon">person</i>
@@ -41,6 +42,21 @@
         </div>
       </div>
     </mat-toolbar>
+    
+    <div class="gambiarra"></div>
     <ng-content></ng-content>
+    
+    <footer>
+      <div class="content-footer">
+        <img class="logo-footer" src="../../assets/imgs/logo_branca.png" alt="logo">
+        <div class="social-media">
+            <a href="http://facebook.com"><img class="facebook-icon" src="../../assets/imgs/facebook-icon.png" alt="facebook"></a>
+            <a href="http://instagram.com"><img class="instagram-icon" src="../../assets/imgs/instagram-icon.png" alt="instagram"></a>
+            <a href="http://whatsapp.com"><img class="whatsapp-icon" src="../../assets/imgs/whatsapp-icon.png" alt="whatsapp"></a>
+        </div>
+      </div>
+      <hr>
+      <p>Todos os direitos reservados Hands On - 2018</p>
+    </footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
