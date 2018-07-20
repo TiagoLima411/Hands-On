@@ -1,10 +1,7 @@
-<div [hidden]="submitted" style="width: 300px;">    
+<div [hidden]="submitted">    
   <mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Criar Evento</mat-card-title>
-    </mat-card-header>
-      <img mat-card-image src="../../assets/imgs/cadastro.jpg" alt="Photo of a Shiba Inu">
+    
+      <img mat-card-image src="../../assets/imgs/banner2.jpg" alt="Photo of a Shiba Inu">
     <mat-card-content>
 
       <form (ngSubmit)="onSubmit()">
@@ -29,7 +26,7 @@
         </mat-form-field> -->
 
         <div>
-          <button type="submit" class="btn btn-success">Submit</button>            
+          <button mat-button color="warn" type="submit" class="btn btn-success">Submit</button>            
         </div>
       </form>
     </mat-card-content>
@@ -75,5 +72,3 @@
   <h4>You submitted successfully!</h4>
   <button class="btn btn-success" (click)="newEvent()">Add</button>
 </div> -->
-
-<event-list></event-list>

@@ -1,3 +1,25 @@
-<p>
-  events works!
-</p>
+<section class="events">
+  <div class="img-space1">
+    <h1>Ultimos Eventos</h1>
+  </div>
+  <div class="content-event">
+    <mat-card *ngFor="let page of events | async" class="card-event">
+      <div class="img-event">
+        <img mat-card-image src="{{page.urlImage}}" alt="Imagem evento">
+      </div>
+      <div class="text-event">
+        <mat-card-content>
+          <mat-card-title class="title-event">{{page.nome}}</mat-card-title>
+          <p>{{page.descricao}}</p>
+          <p><strong>Quantidade mínima de voluntários: </strong>{{page.voluntarios}}</p>
+          <div class="local-event">
+            <p>{{page.local}}</p>
+          </div>
+        </mat-card-content>
+      </div>
+      <mat-card-actions class="button-event">
+        <button mat-button (click)='createVoluntario()'>Voluntário</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</section>

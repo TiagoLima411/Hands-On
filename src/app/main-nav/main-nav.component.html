@@ -25,14 +25,15 @@
                 <span class="username useremail">{{user.email}}</span>
               </div>
             </div>
-            <button mat-menu-item routerLink="/admin">Admin</button>
+            
             <hr>
             <button mat-menu-item routerLink="/event">Criar Evento</button>
-            <button mat-menu-item routerLink="#">Meus Eventos</button>
+            <button mat-menu-item routerLink="/events">Meus Eventos</button>
+            <button mat-menu-item routerLink="/allevents">Eventos</button>
             <hr>
             <button mat-menu-item routerLink="#">
               <mat-icon>how_to_reg</mat-icon>
-              Configuração
+              Perfil
             </button>
             <button mat-menu-item (click)="afService.logout()">
               <mat-icon>exit_to_app</mat-icon>
