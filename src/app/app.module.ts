@@ -26,6 +26,7 @@ import { FormsModule} from '@angular/forms';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
 import { AboutComponent } from './about/about.component';
 import { AngularFireStorageModule } from 'angularfire2/storage';
+import { VoluntarioService } from './events/shared/voluntario.service';
 import { ContactComponent } from './contact/contact.component';
 
 
@@ -82,7 +83,7 @@ const appRoutes: Routes = [
     )
   ],
   entryComponents: [],
-  providers: [AfService, AdminGuard, SubscriberGuard],
+  providers: [AfService, AdminGuard, SubscriberGuard, VoluntarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

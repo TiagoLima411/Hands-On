@@ -12,6 +12,8 @@
   <button class="button is-small btn-primary" *ngIf='event.active' (click)='updateActive(false)'>Inactive</button>
  
   <button class="button is-small btn-primary" *ngIf='!event.active' (click)='updateActive(true)'>Active</button>
+
+  <button (click)='createVoluntario()'>Voluntario</button>
  
   <button class="button is-small btn-danger" (click)='deleteEvent()'>Delete</button>
  
