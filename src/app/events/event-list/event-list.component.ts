@@ -9,12 +9,14 @@ import { EventService } from '../shared/event.service';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
-  events: any;
+  myEvents: any;
+  allEvents: any;
  
   constructor(private eventService: EventService) { }
  
   ngOnInit() {
     this.getEventsList();
+    this.getAllEventsList();
   }
  
   getEventsList() {
@@ -24,7 +26,18 @@ export class EventListComponent implements OnInit {
         changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
       )
     ).subscribe(events => {
-      this.events = events;
+      this.myEvents = events;
+    });
+  }
+
+  getAllEventsList() {
+    // Use snapshotChanges().map() to store the key
+    this.eventService.getEventListHome().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+      )
+    ).subscribe(events => {
+      this.allEvents = events;
     });
   }
 }
