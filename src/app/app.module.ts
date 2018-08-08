@@ -14,10 +14,7 @@ import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { signupPageComponent } from './signup-page/signup-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { AfService } from './providers/af.service';
 import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
-import { AdminGuard } from './guards/admin.guard';
-import { SubscriberGuard } from './guards/subscriber.guard';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { EventsComponent } from './events/events.component';
 import { EventComponent} from './events/event/event.component';
@@ -26,23 +23,8 @@ import { FormsModule} from '@angular/forms';
 import { EventDetailComponent } from './events/event-detail/event-detail.component';
 import { AboutComponent } from './about/about.component';
 import { AngularFireStorageModule } from 'angularfire2/storage';
-import { VoluntarioService } from './events/shared/voluntario.service';
 import { ContactComponent } from './contact/contact.component';
-import { AppRoutingModule } from './/app-routing.module';
-
-
-const appRoutes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginPageComponent },
-  { path: 'signup', component: signupPageComponent },
-  { path: 'events', component: EventListComponent, canActivate: [SubscriberGuard] },
-  { path: 'allevents', component: EventsComponent, canActivate: [SubscriberGuard] },
-  { path: 'event', component: EventComponent, canActivate: [SubscriberGuard] },
-  { path: 'admin', component: AdminPageComponent, canActivate: [AdminGuard] },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent }
-]
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -80,13 +62,9 @@ const appRoutes: Routes = [
     AngularFireAuthModule,
     AngularFireStorageModule,
     FormsModule,
-    RouterModule.forRoot(
-      appRoutes
-    ),
     AppRoutingModule
   ],
   entryComponents: [],
-  providers: [AfService, AdminGuard, SubscriberGuard, VoluntarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
