@@ -28,6 +28,7 @@ import { AboutComponent } from './about/about.component';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { VoluntarioService } from './events/shared/voluntario.service';
 import { ContactComponent } from './contact/contact.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 const appRoutes: Routes = [
@@ -81,7 +82,8 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(
       appRoutes
-    )
+    ),
+    AppRoutingModule
   ],
   entryComponents: [],
   providers: [AfService, AdminGuard, SubscriberGuard, VoluntarioService],
